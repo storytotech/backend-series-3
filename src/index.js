@@ -11,6 +11,10 @@ connectDb()
     app.listen(process.env.PORT, () => {
       console.log(`🚀 Server running at http://localhost:${process.env.PORT}`);
     });
+    app.on("error",()=>{
+      console.log("error on the connectdb()",error);
+      
+    });
   })
   .catch((err) => {
     console.error("❌ DB connection failed", err);
